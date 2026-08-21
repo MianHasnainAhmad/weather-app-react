@@ -1,0 +1,49 @@
+:root {
+  --ink: #16232f;
+  --ink-soft: #4c6178;
+  --paper: #eaf3fa;
+
+  --sun: #f2a73b;
+  --cloud: #c3cedd;
+  --rain: #5b8db8;
+  --snow: #eaf3fa;
+  --storm: #6b5b95;
+
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.55);
+  --glass-shadow: rgba(22, 35, 47, 0.18);
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}

@@ -1,0 +1,328 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 20px;
+  transition: background 0.6s ease;
+  background: linear-gradient(160deg, #cfe4f5 0%, #eaf3fa 55%, #fdf3e3 100%);
+}
+
+/* Dynamic sky backgrounds by condition */
+.bg-default { background: linear-gradient(160deg, #cfe4f5 0%, #eaf3fa 55%, #fdf3e3 100%); }
+.bg-sun { background: linear-gradient(160deg, #6fb3e0 0%, #a9d3ec 45%, #ffdfa0 100%); }
+.bg-sun-cloud { background: linear-gradient(160deg, #8fb6d6 0%, #c7d8e6 50%, #f2e4c6 100%); }
+.bg-cloud { background: linear-gradient(160deg, #8ea1b8 0%, #c3cedd 55%, #dfe6ee 100%); }
+.bg-fog { background: linear-gradient(160deg, #9aa7b3 0%, #c9d1d9 55%, #e6eaee 100%); }
+.bg-drizzle { background: linear-gradient(160deg, #5c7c9c 0%, #8ba7c2 55%, #cdddea 100%); }
+.bg-rain { background: linear-gradient(160deg, #3f5f7d 0%, #5b8db8 55%, #a9c6dc 100%); }
+.bg-snow { background: linear-gradient(160deg, #b9cfe0 0%, #eaf3fa 55%, #ffffff 100%); }
+.bg-storm { background: linear-gradient(160deg, #2c2740 0%, #4a3f66 55%, #6b5b95 100%); }
+
+.page-night {
+  background: linear-gradient(160deg, #0f1a2b 0%, #1e2f47 55%, #2f3d57 100%) !important;
+}
+
+.page-night .app-header h1,
+.page-night .app-tagline,
+.page-night .suggestions-label {
+  color: #eaf3fa;
+}
+
+.app-shell {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* ---------- Header ---------- */
+
+.app-header {
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.app-header h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 2.1rem;
+  margin: 0;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.app-tagline {
+  margin: 4px 0 0;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- Search ---------- */
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  padding: 6px 8px 6px 16px;
+  box-shadow: 0 12px 30px -12px var(--glass-shadow);
+  margin-bottom: 22px;
+}
+
+.search-glyph {
+  color: var(--ink-soft);
+  flex-shrink: 0;
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.98rem;
+  color: var(--ink);
+  padding: 10px 0;
+}
+
+.search-bar input::placeholder {
+  color: var(--ink-soft);
+  opacity: 0.7;
+}
+
+.search-btn {
+  border: none;
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 600;
+  font-size: 0.86rem;
+  padding: 10px 18px;
+  border-radius: 9px;
+  transition: opacity 0.15s ease, transform 0.1s ease;
+}
+
+.search-btn:hover:not(:disabled) {
+  opacity: 0.88;
+}
+
+.search-btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.search-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ---------- Weather card ---------- */
+
+.weather-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 28px 26px 24px;
+  box-shadow: 0 24px 48px -20px var(--glass-shadow);
+  animation: rise 0.35s ease;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.weather-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.weather-city {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--ink);
+}
+
+.weather-location {
+  margin: 2px 0 0;
+  font-size: 0.84rem;
+  color: var(--ink-soft);
+}
+
+.weather-icon {
+  flex-shrink: 0;
+}
+
+.weather-temp-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.weather-temp {
+  font-family: var(--font-mono);
+  font-size: 3.4rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.weather-condition {
+  font-size: 1rem;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.weather-feels-like {
+  margin: 6px 0 0;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.weather-stats {
+  display: flex;
+  gap: 12px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(22, 35, 47, 0.1);
+}
+
+.weather-stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-soft);
+}
+
+.stat-value {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+/* ---------- Status states (loading / error) ---------- */
+
+.status-state {
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 40px 24px;
+  text-align: center;
+  box-shadow: 0 24px 48px -20px var(--glass-shadow);
+}
+
+.spinner {
+  width: 34px;
+  height: 34px;
+  margin: 0 auto 14px;
+  border: 3px solid rgba(22, 35, 47, 0.15);
+  border-top-color: var(--ink);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-state p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+
+.error-state {
+  color: var(--ink);
+}
+
+.error-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 10px 0 4px;
+}
+
+.error-hint {
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ---------- Suggestions (idle state) ---------- */
+
+.suggestions {
+  text-align: center;
+  padding: 12px 4px;
+}
+
+.suggestions-label {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  margin: 0 0 12px;
+}
+
+.suggestion-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.chip {
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  color: var(--ink);
+  font-size: 0.84rem;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 999px;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.chip:hover {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.chip:active {
+  transform: scale(0.96);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 480px) {
+  .page {
+    padding: 32px 14px;
+  }
+
+  .weather-temp {
+    font-size: 2.8rem;
+  }
+
+  .app-header h1 {
+    font-size: 1.8rem;
+  }
+}
