@@ -2,6 +2,10 @@
 
 Task 10 · React weather application with live city search, built with functional components and hooks.
 
+**🔗 [Live demo](https://weatherappmianhasnaintask10.netlify.app/)**
+
+![Windrose weather app showing the weather for Nowshera](screenshots/home.jpg)
+
 ## Features
 
 - Search weather by city name
